@@ -11,6 +11,22 @@ url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 response = open(url).read
 ingredients = JSON.parse(response)['drinks']
 
-Ingredient.create(name: ingredients.sample["strIngredient1"])
-Ingredient.create(name: ingredients.sample["strIngredient1"])
-Ingredient.create(name: ingredients.sample["strIngredient1"])
+#decided not to use the ingredients in the JSON.
+
+Ingredient.create(name: "Rum")
+Ingredient.create(name: "Lemon Juice")
+Ingredient.create(name: "Lemon")
+Ingredient.create(name: "Syrup")
+Ingredient.create(name: "Mint Leaf")
+Ingredient.create(name: "Light Rum")
+Ingredient.create(name: "Lime Juice")
+Ingredient.create(name: "Soda Water")
+Ingredient.create(name: "Vodka")
+Ingredient.create(name: "Tomato Juice")
+Ingredient.create(name: "Worcestershire Sauce")
+Ingredient.create(name: "Hot Sauce")
+Ingredient.create(name: "Horseradish")
+Ingredient.create(name: "Ground Black Pepper")
+Ingredient.create(name: "Salt")
+Ingredient.create(name: "Celery")
+

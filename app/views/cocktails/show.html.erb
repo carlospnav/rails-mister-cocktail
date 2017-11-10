@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <h1><%= @cocktail.name %></h1>
-    <%= link_to 'Back', cocktails_path %>
+    <% if @cocktail.photo? %>
+      <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+    <% end %>
     <ul>
       <% @cocktail.doses.each do |dose| %>
         <li>
@@ -11,9 +13,15 @@
       <% end %>
     </ul>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <% if @dose.errors.any? %>
+      <% @dose.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
     <%= f.input :description, placeholder: "2 teanspoons" %>
     <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose one" %>
     <%= f.submit "Add dose", class: "btn btn-primary" %>
+    <%= link_to 'Back', cocktails_path, class: "btn btn-primary"%>
     <% end %>
   </div>
 </div>

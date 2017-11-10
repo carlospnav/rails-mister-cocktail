@@ -4,6 +4,7 @@
       <div class="col-sm-6 col-sm-offset-3">
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
+          <%= f.input :photo, as: :attachinary %>
           <%= f.button :submit %>
         <% end %>
         <%= link_to "Cancel", cocktails_path %>

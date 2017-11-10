@@ -61,3 +61,9 @@ gem 'autoprefixer-rails'
 
 #Securely configure a rails application
 gem 'figaro'
+
+#Image upload gems
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+

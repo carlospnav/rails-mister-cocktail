@@ -8,6 +8,7 @@ class DosesController < ApplicationController
   end
 
   def create
+
     @dose = Dose.new(dose_params)
     if dose_params[:ingredient_id]
       @cocktail = Cocktail.find(params[:cocktail_id])
@@ -16,12 +17,10 @@ class DosesController < ApplicationController
       @dose.cocktail = @cocktail
       @dose.ingredient = @ingredient
     end
+    @dose.valid?
+    @dose.save
 
-    if @dose.save
-      redirect_to @cocktail
-    else
-      render :new
-    end
+    redirect_to @cocktail, message: "olá"
   end
 
   def destroy
