@@ -58,3 +58,6 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
+#Securely configure a rails application
+gem 'figaro'
